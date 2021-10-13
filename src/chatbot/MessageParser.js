@@ -5,8 +5,18 @@ class MessageParser {
   }
 
   parse(message) {
-    if (message.includes("hello")) {
+    if (message.includes("Hello") || message.includes("Hi")) {
       this.actionProvider.handleHello();
+    }
+    if (
+      message.includes("dog") ||
+      message.includes("cat") ||
+      message.includes("animal")
+    ) {
+      this.actionProvider.handleDog();
+    }
+    if (message.includes("question")) {
+      this.actionProvider.handleQuestion();
     }
   }
 }
